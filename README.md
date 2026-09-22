@@ -1,75 +1,62 @@
-# React + TypeScript + Vite
+# AegisOT — System Architecture Studio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Isoflow Community Edition](https://img.shields.io/badge/Powered%20By-Isoflow%20CE-blue)](https://github.com/markmanx/isoflow)
+[![React 18](https://img.shields.io/badge/React-18.3.1-61dafb)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178c6)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Currently, two official plugins are available:
+An interactive multi-view architecture visualization suite for the **AegisOT** Autonomous Industrial IoT Security Architecture[cite: 1, 7]. This tool combines 3D isometric modeling powered by **Isoflow Community Edition** with interactive 2D engineering views, dynamic component editing, custom icon uploads, and direct vector SVG exports.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Repository: [https://github.com/maryam22001/System-Architecture-by-isoflow.git](https://github.com/maryam22001/System-Architecture-by-isoflow.git)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 3D Engine Reference: Isoflow
 
-## Expanding the ESLint configuration
+The 3D isometric visualization in this project is built using [Isoflow Community Edition](https://github.com/markmanx/isoflow) (`markmanx/isoflow`), an open-source React component for drawing 3D isometric network and system diagrams.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+* **Repository:** [https://github.com/markmanx/isoflow](https://github.com/markmanx/isoflow)
+* **Documentation:** [https://isoflow.io/docs](https://isoflow.io/docs)
+* **License:** MIT License
+* **Key Features Leveraged:**
+  * Declarative isometric coordinate grid mapping (`{ x, y }` tile positions).
+  * Extensible icon sets via `@isoflow/isopacks` (AWS, GCP, Azure, Kubernetes, and generic hardware).
+  * Dynamic isometric connectors and labeled data paths.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Architecture Overview (5-Layer Model)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The diagram reflects the end-to-end telemetry and remediation pipeline of the AegisOT platform[cite: 1, 7]:
 
-```
+1. **Layer 1: Physical / OT Edge:** ESP32 microcontrollers, optocoupled emergency-stop relays, 12V conveyor drives, and high-rate I2C vibration/power telemetry (ADXL345, INA219)[cite: 1, 7].
+2. **Layer 2: Network / Trust:** Boundary enrollment (ZTP engine), smart managed switch isolation (VLAN 10 vs. VLAN 99 Quarantine), and GNS3 emulated network remediation[cite: 1, 7].
+3. **Layer 3: Platform HA:** High-availability TLS Mosquitto broker cluster, Laravel 11 orchestration worker/API, and TimescaleDB/PostgreSQL time-series persistence[cite: 1, 7].
+4. **Layer 4: Supervised AI Suite:** FastAPI windowed anomaly detection service paired with LangGraph diagnostic agents operating under strict read-only tool guardrails[cite: 1, 7].
+5. **Layer 5: Experience & Oversight:** Real-time Vue 3 Digital Twin state mirror and Flutter mobile interface with mandatory human-in-the-loop approval gates[cite: 1, 7].
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Workspace Features
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* **3D Isometric View (Isoflow):** Visualizes the multi-tier spatial cloud, network boundaries, and edge hardware with 3D isometric connectors and depth perspective.
+* **Clean HA Diagram View:** Mimics enterprise microservice cluster documentation with soft-rounded group pods, orthogonal Manhattan line routing, and live status badges.
+* **Detailed 2D View:** Card-based operational layout detailing pinouts, bus protocols, and data badges.
+* **In-Place Component Editor:** Double-click any node or boundary enclosure to edit titles, subtext, add hardware notes, or upload custom SVG/PNG device icons.
+* **Theme Switching:** Instant toggle between High-Contrast Dark Mode and Presentation-Ready Light Mode.
+* **Vector SVG Export:** Direct client-side serialization to download pure, scalable `.svg` files from any active view for slide decks, papers, and GitHub documentation.
 
-```
+---
+
+## Prerequisites & Installation
+
+### Requirements
+
+* **Node.js:** v18.x or v20.x LTS
+* **Package Manager:** npm (v9+) or pnpm
+
+### 1. Clone the Repository
+
+```bash
+git clone [https://github.com/maryam22001/System-Architecture-by-isoflow.git](https://github.com/maryam22001/System-Architecture-by-isoflow.git)
+cd System-Architecture-by-isoflow
