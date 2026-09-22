@@ -59,4 +59,91 @@ The diagram reflects the end-to-end telemetry and remediation pipeline of the Ae
 
 ```bash
 git clone [https://github.com/maryam22001/System-Architecture-by-isoflow.git](https://github.com/maryam22001/System-Architecture-by-isoflow.git)
+```bash
+git clone https://github.com/maryam22001/System-Architecture-by-isoflow.git
 cd System-Architecture-by-isoflow
+```
+
+## Running the Project Locally
+
+### Start Development Server
+
+To launch the local Vite development server with Hot Module Replacement (HMR):
+
+```bash
+npm run dev
+```
+
+Once running, navigate to the local address displayed in your terminal (typically `http://localhost:5173/` or `http://localhost:5174/`).
+
+### Making Edits & Re-running
+
+Editing Layout & Nodes: Customize node positioning, connections, and cluster coordinates directly inside `src/CleanArchitectureView.tsx`, `src/Architecture2D.tsx`, or `src/aegisotData.ts`. Vite updates the browser instantly via HMR without a full page refresh.
+
+### Running with Clean Cache
+
+If modifying package versions or bundler settings in `vite.config.ts`, restart Vite and force dependency pre-bundling:
+
+```bash
+npm run dev -- --force
+```
+
+### Linting & Type-Checking
+
+Run ESLint and TypeScript checks before committing:
+
+```bash
+npm run lint
+```
+
+## How to Use the Studio
+
+### 1. View Navigation
+
+Toggle between views using the top navigation bar:
+
+- Clean Diagram: Clustered microservice layout with soft HA enclosures and orthogonal routes.
+- Detailed 2D View: Deep component inspection with sensor buses, pinouts, and custom lines.
+- 3D Isometric: 3D perspective diagram powered by Isoflow.
+
+### 2. Canvas Interactions
+
+- Zoom: Scroll the mouse wheel up/down over the canvas, or use the `+` / `-` buttons on the bottom-right HUD.
+- Pan: Click and hold any empty background area, then drag across the canvas.
+- Move Nodes / Enclosures: Click and drag any component icon or enclosure box to reorder the layout.
+
+### 3. Editing Components & Uploading Custom Icons
+
+- Double-click any node icon to open the edit modal.
+- Modify the label, subtitle, or select a built-in vector icon.
+- Custom Icons: Click "Choose File" to upload your own local `.svg` or `.png` hardware icons directly onto the canvas.
+- Click "Save Changes" to commit updates to the live scene.
+
+### 4. Vector SVG Export
+
+Frame your desired layout and click "Export Active View (SVG)" in the top header.
+
+The application compiles the active DOM SVG tree into a downloadable `.svg` vector file ready for technical documentation and presentation slides.
+
+## Production Build
+
+To build a standalone production bundle:
+
+```bash
+npm run build
+```
+
+The compiled assets will be located in the `dist/` directory. Test the production build locally with:
+
+```bash
+npm run preview
+```
+
+## Acknowledgments & Credits
+
+- `markmanx/isoflow` — Core 3D isometric diagramming component and `@isoflow/isopacks`.
+- Diagrams-as-Code Community — Inspiration for declarative architectural patterns.
+
+## License
+
+This project is licensed under the MIT License.
