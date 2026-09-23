@@ -12,8 +12,8 @@
   "dependencies": {
     "@isoflow/isopacks": "^0.0.10",
     "isoflow": "^1.1.1",
-    "react": "18.3.1",
-    "react-dom": "18.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
