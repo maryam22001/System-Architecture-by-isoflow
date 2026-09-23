@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import type { ComponentType } from 'react';
+import { useState, type ComponentType } from 'react';
 import * as IsoflowModule from 'isoflow';
 import { Architecture2D } from './Architecture2D';
 import { CleanArchitectureView } from './CleanArchitectureView';
